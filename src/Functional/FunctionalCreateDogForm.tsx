@@ -1,33 +1,103 @@
+import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
+import { Requests } from "../api";
+import { Dog } from "../types";
 
-// use this as your default selected image
 const defaultSelectedImage = dogPictures.BlueHeeler;
 
-export const FunctionalCreateDogForm = () => {
+export type DogFormProps = {
+  refetchDogs: () => void;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const FunctionalCreateDogForm = ({
+  refetchDogs,
+  isLoading,
+  setIsLoading,
+}: DogFormProps) => {
+  const [userInput, setUserInput] = useState<Omit<Dog, "id">>({
+    name: "",
+    description: "",
+    image: defaultSelectedImage,
+    isFavorite: false,
+  });
+
+  const { name, description, image } = userInput;
+
+  const handleUserInput = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setUserInput((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setUserInput((prev) => ({ ...prev, image: e.target.value }));
+  };
+
+  const createDog = () => {
+    setIsLoading(true);
+    Requests.postDog({ dog: userInput })
+      .then(refetchDogs)
+      .finally(() => setIsLoading(false));
+  };
+
+  const resetForm = () => {
+    setUserInput({
+      name: "",
+      description: "",
+      image: defaultSelectedImage,
+      isFavorite: false,
+    });
+  };
+
   return (
     <form
-      action=""
       id="create-dog-form"
       onSubmit={(e) => {
         e.preventDefault();
+        createDog();
+        resetForm();
       }}
     >
       <h4>Create a New Dog</h4>
       <label htmlFor="name">Dog Name</label>
-      <input type="text" disabled={false} />
+      <input
+        value={name}
+        onChange={handleUserInput}
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter dog's name"
+        disabled={isLoading}
+      />
       <label htmlFor="description">Dog Description</label>
-      <textarea name="" id="" cols={80} rows={10} disabled={false}></textarea>
+      <textarea
+        value={description}
+        onChange={handleUserInput}
+        id="description"
+        name="description"
+        cols={80}
+        rows={10}
+        placeholder="Enter dog's description"
+        disabled={isLoading}
+      ></textarea>
       <label htmlFor="picture">Select an Image</label>
-      <select id="">
-        {Object.entries(dogPictures).map(([label, pictureValue]) => {
-          return (
-            <option value={pictureValue} key={pictureValue}>
-              {label}
-            </option>
-          );
-        })}
+      <select
+        value={image}
+        onChange={handleImageChange}
+        id="picture"
+        name="picture"
+        disabled={isLoading}
+      >
+        {Object.entries(dogPictures).map(([label, pictureValue]) => (
+          <option value={pictureValue} key={pictureValue}>
+            {label}
+          </option>
+        ))}
       </select>
-      <input type="submit" />
+      <input type="submit" disabled={isLoading} />
     </form>
   );
 };

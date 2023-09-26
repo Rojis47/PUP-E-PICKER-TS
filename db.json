@@ -1,151 +1,214 @@
 {
   "dogs": [
     {
-      "name": "Wilber",
-      "image": "/assets/chihuahua.avif",
-      "description": "magenta boo colossal unpleasant seize Tactics Florida",
+      "name": "Viva",
+      "image": "/assets/dalmation.png",
+      "description": "female although urgently teleport Coupe Polygender national Gasoline",
       "isFavorite": true,
       "id": 0
     },
     {
-      "name": "Roselyn",
-      "image": "/assets/chihuahua.avif",
-      "description": "Coupe South withdrawal Soft Latin lime Reggae chapter",
+      "name": "Hailee",
+      "image": "/assets/boxer.png",
+      "description": "Identity 1080p Marketing Dynamic Forward cyan Designer",
       "isFavorite": true,
       "id": 1
     },
     {
-      "name": "Antonia",
-      "image": "/assets/chihuahua.avif",
-      "description": "ampere Metal lavender Funk Fundamental payment wireless",
-      "isFavorite": true,
-      "id": 2
-    },
-    {
-      "name": "Shaina",
-      "image": "/assets/corgi.png",
-      "description": "Cotton male Refined Convertible auxiliary",
-      "isFavorite": true,
+      "name": "Estrella",
+      "image": "/assets/dalmation.png",
+      "description": "silver loyalty Legacy Rubber Cliffs North salve Southwest",
+      "isFavorite": false,
       "id": 3
     },
     {
-      "name": "Dallin",
-      "image": "/assets/chihuahua.avif",
-      "description": "Directives Delaware why Response Diesel Kentucky blue cyan",
-      "isFavorite": true,
+      "name": "Moshe",
+      "image": "/assets/dalmation.png",
+      "description": "Pickup Toyota indexing Orchestrator Engineer",
+      "isFavorite": false,
       "id": 4
     },
     {
-      "name": "Efrain",
-      "image": "/assets/chihuahua.avif",
-      "description": "Electric Analyst Usability Mountain East Table female Lead",
-      "isFavorite": true,
+      "name": "Icie",
+      "image": "/assets/dalmation.png",
+      "description": "Market Technician Southwest payment Small Coordinator Engineer Loop",
+      "isFavorite": false,
       "id": 5
     },
     {
-      "name": "Roy",
-      "image": "/assets/corgi.png",
-      "description": "male AGP copying Chair exercitationem",
-      "isFavorite": false,
+      "name": "Guadalupe",
+      "image": "/assets/chihuahua.avif",
+      "description": "Francium FTP Rustic Southeast Phased supposing empower",
+      "isFavorite": true,
       "id": 6
     },
     {
-      "name": "Ellis",
+      "name": "Shany",
       "image": "/assets/cowardly.png",
-      "description": "Folk interface engage Classical Specialist Bicycle gold",
-      "isFavorite": false,
+      "description": "who waste Coupe Bedfordshire transmitting capacitor whose",
+      "isFavorite": true,
       "id": 7
     },
     {
-      "name": "Velma",
-      "image": "/assets/boxer.png",
-      "description": "Diesel whether synthesize South Investment Zirconium farad",
-      "isFavorite": true,
+      "name": "Clementine",
+      "image": "/assets/chihuahua.avif",
+      "description": "monetize walrus azure Rubber Account composite collaborative Proactive",
+      "isFavorite": false,
       "id": 8
     },
     {
-      "name": "Theodora",
-      "image": "/assets/dalmation.png",
-      "description": "Alaska Sedan digital empowering 1080p huzzah Bike Wooden",
-      "isFavorite": false,
+      "name": "Elizabeth",
+      "image": "/assets/chihuahua.avif",
+      "description": "North Borders Estonia integrated UAE Toyota Modern",
+      "isFavorite": true,
       "id": 9
     },
     {
-      "name": "Geovanny",
-      "image": "/assets/cowardly.png",
-      "description": "South North male Sports Gasoline",
-      "isFavorite": false,
+      "name": "Kyler",
+      "image": "/assets/chihuahua.avif",
+      "description": "who Incredible Promethium around Pop",
+      "isFavorite": true,
       "id": 10
     },
     {
-      "name": "Estevan",
-      "image": "/assets/dalmation.png",
-      "description": "Automotive Monitored circa violet Georgia",
-      "isFavorite": false,
+      "name": "Sam",
+      "image": "/assets/boxer.png",
+      "description": "female cum card extranet daintily Manager Legacy",
+      "isFavorite": true,
       "id": 11
     },
     {
-      "name": "Estefania",
-      "image": "/assets/dalmation.png",
-      "description": "reboot facilis input management that overriding SMTP",
+      "name": "Abner",
+      "image": "/assets/cowardly.png",
+      "description": "recontextualize ipsum total from online Soft CLI vacantly",
       "isFavorite": true,
       "id": 12
     },
     {
-      "name": "Myles",
-      "image": "/assets/blue-heeler.png",
-      "description": "Synchronised group sensor composite raw anenst navigate",
-      "isFavorite": false,
+      "name": "Sydney",
+      "image": "/assets/corgi.png",
+      "description": "Toys usually Movies Northwest South Classical train Profound",
+      "isFavorite": true,
       "id": 13
     },
     {
-      "name": "Santiago",
-      "image": "/assets/corgi.png",
-      "description": "woman Global piercing Rap Web",
-      "isFavorite": true,
+      "name": "Ramona",
+      "image": "/assets/dalmation.png",
+      "description": "index Northwest Southeast invoice Teagan Mississippi porro",
+      "isFavorite": false,
       "id": 14
     },
     {
-      "name": "Oral",
+      "name": "Leonie",
       "image": "/assets/chihuahua.avif",
-      "description": "City Optimized Corporate Clothing Implemented Metal navigating Chair",
-      "isFavorite": false,
+      "description": "extroverted Bicycle Account North Gourde",
+      "isFavorite": true,
       "id": 15
     },
     {
-      "name": "Anjali",
-      "image": "/assets/chihuahua.avif",
-      "description": "Bicycle canst nor henry RAM",
-      "isFavorite": false,
+      "name": "Greg",
+      "image": "/assets/dalmation.png",
+      "description": "Borders worriedly gold Nepal picture blue silver",
+      "isFavorite": true,
       "id": 16
     },
     {
-      "name": "Angelina",
+      "name": "Leopold",
       "image": "/assets/blue-heeler.png",
-      "description": "Manager Sodium FTM maroon SSD Jewelery White bully",
-      "isFavorite": true,
+      "description": "Regional mobile barring magnetic forenenst",
+      "isFavorite": false,
       "id": 17
     },
     {
-      "name": "Sandra",
-      "image": "/assets/boxer.png",
-      "description": "Lamborghini deposit disintermediate turquoise Martin",
-      "isFavorite": false,
+      "name": "Winnifred",
+      "image": "/assets/cowardly.png",
+      "description": "West auction payment of deposit green moderator Integration",
+      "isFavorite": true,
       "id": 18
     },
     {
-      "name": "Yvette",
-      "image": "/assets/boxer.png",
-      "description": "distributed Sleek nest exploit Surinam compressing straight",
-      "isFavorite": true,
+      "name": "Juanita",
+      "image": "/assets/corgi.png",
+      "description": "Account Cloned considering Crew Rustic dwell West",
+      "isFavorite": false,
       "id": 19
     },
     {
-      "name": "asdfasdf",
-      "description": "asdfasdf",
+      "name": "",
+      "description": "",
       "image": "/assets/blue-heeler.png",
       "isFavorite": false,
       "id": 20
+    },
+    {
+      "name": "rex",
+      "description": "",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 21
+    },
+    {
+      "name": "asd",
+      "description": "",
+      "image": "/assets/boxer.jpeg",
+      "isFavorite": true,
+      "id": 22
+    },
+    {
+      "name": "sdffsdfsdf",
+      "description": "",
+      "image": "/assets/corgi.png",
+      "isFavorite": false,
+      "id": 23
+    },
+    {
+      "name": "asd",
+      "description": "",
+      "image": "/assets/chihuahua.avif",
+      "isFavorite": false,
+      "id": 24
+    },
+    {
+      "name": "asd",
+      "description": "asd",
+      "image": "/assets/chihuahua.avif",
+      "isFavorite": false,
+      "id": 25
+    },
+    {
+      "name": "asd",
+      "description": "asd",
+      "image": "/assets/boxer.jpeg",
+      "isFavorite": false,
+      "id": 26
+    },
+    {
+      "name": "asd",
+      "description": "sd",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 27
+    },
+    {
+      "name": "asd",
+      "description": "asd",
+      "image": "/assets/chihuahua.avif",
+      "isFavorite": false,
+      "id": 28
+    },
+    {
+      "name": "sad",
+      "description": "asd",
+      "image": "/assets/chihuahua.avif",
+      "isFavorite": false,
+      "id": 29
+    },
+    {
+      "name": "",
+      "description": "",
+      "image": "/assets/blue-heeler.png",
+      "isFavorite": false,
+      "id": 30
     }
   ]
 }

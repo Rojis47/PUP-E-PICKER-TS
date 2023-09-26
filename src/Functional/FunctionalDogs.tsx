@@ -1,92 +1,66 @@
 import { DogCard } from "../Shared/DogCard";
-import { dogPictures } from "../dog-pictures";
+import { Dog } from "../types";
+import { useEffect, useCallback } from "react";
+import { Requests } from "../api";
 
-// Right now these dogs are constant, but in reality we should be getting these from our server
-export const FunctionalDogs = () => {
+export type FunctionalDogProps = {
+  dogs: Dog[];
+  activeSelector: string;
+  refetchDogs: () => void;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const FunctionalDogs = ({
+  dogs,
+  activeSelector,
+  refetchDogs,
+  isLoading,
+  setIsLoading,
+}: FunctionalDogProps) => {
+  useEffect(() => {
+    refetchDogs();
+  }, [refetchDogs]);
+
+  const updateDogFavoriteStatus = useCallback(
+    (id: number, isFavorite: boolean) => {
+      setIsLoading(true);
+      Requests.updateDog({ id, dog: { isFavorite } })
+        .then(refetchDogs)
+        .finally(() => setIsLoading(false));
+    },
+    [refetchDogs]
+  );
+
+  const removeDog = useCallback(
+    (id: number) => {
+      setIsLoading(true);
+      Requests.deleteDog(id)
+        .then(refetchDogs)
+        .finally(() => setIsLoading(false));
+    },
+    [refetchDogs]
+  );
+
+  let filteredDogs = dogs;
+  if (activeSelector === "favorite") {
+    filteredDogs = dogs.filter((dog) => dog.isFavorite);
+  } else if (activeSelector === "unfavorite") {
+    filteredDogs = dogs.filter((dog) => !dog.isFavorite);
+  }
+
   return (
-    //  the "<> </>"" are called react fragments, it's like adding all the html inside
-    // without adding an actual html element
     <>
-      <DogCard
-        dog={{
-          id: 1,
-          image: dogPictures.BlueHeeler,
-          description: "Example Description",
-          isFavorite: false,
-          name: "Cute Blue Heeler",
-        }}
-        key={1}
-        onTrashIconClick={() => {
-          alert("clicked trash");
-        }}
-        onHeartClick={() => {
-          alert("clicked heart");
-        }}
-        onEmptyHeartClick={() => {
-          alert("clicked empty heart");
-        }}
-        isLoading={false}
-      />
-      <DogCard
-        dog={{
-          id: 2,
-          image: dogPictures.Boxer,
-          description: "Example Description",
-          isFavorite: false,
-          name: "Cute Boxer",
-        }}
-        key={2}
-        onTrashIconClick={() => {
-          alert("clicked trash");
-        }}
-        onHeartClick={() => {
-          alert("clicked heart");
-        }}
-        onEmptyHeartClick={() => {
-          alert("clicked empty heart");
-        }}
-        isLoading={false}
-      />
-      <DogCard
-        dog={{
-          id: 3,
-          image: dogPictures.Chihuahua,
-          description: "Example Description",
-          isFavorite: false,
-          name: "Cute Chihuahua",
-        }}
-        key={3}
-        onTrashIconClick={() => {
-          alert("clicked trash");
-        }}
-        onHeartClick={() => {
-          alert("clicked heart");
-        }}
-        onEmptyHeartClick={() => {
-          alert("clicked empty heart");
-        }}
-        isLoading={false}
-      />
-      <DogCard
-        dog={{
-          id: 4,
-          image: dogPictures.Corgi,
-          description: "Example Description",
-          isFavorite: false,
-          name: "Cute Corgi",
-        }}
-        key={4}
-        onTrashIconClick={() => {
-          alert("clicked trash");
-        }}
-        onHeartClick={() => {
-          alert("clicked heart");
-        }}
-        onEmptyHeartClick={() => {
-          alert("clicked empty heart");
-        }}
-        isLoading={false}
-      />
+      {filteredDogs.map((dog) => (
+        <DogCard
+          isLoading={isLoading}
+          dog={dog}
+          key={dog.id}
+          onTrashIconClick={() => removeDog(dog.id)}
+          onHeartClick={() => updateDogFavoriteStatus(dog.id, false)}
+          onEmptyHeartClick={() => updateDogFavoriteStatus(dog.id, true)}
+        />
+      ))}
     </>
   );
 };

@@ -1,8 +1,52 @@
-// you can use this type for react children if you so choose
-import { ReactNode } from "react";
+import React, { useState, ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { Dog } from "../types";
 
-export const FunctionalSection = () => {
+export type FunctionalSectionProps = {
+  children: ReactNode;
+  dogs: Dog[];
+  activeSelector: string;
+  setActiveSelector: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export const FunctionalSection = ({
+  children,
+  dogs,
+  activeSelector,
+  setActiveSelector,
+}: FunctionalSectionProps) => {
+  const favoriteDogs = dogs.filter((dog) => dog.isFavorite);
+  const unfavoriteDogs = dogs.filter((dog) => !dog.isFavorite);
+
+  const Selector = ({
+    label,
+    selectorType,
+  }: {
+    label: string;
+    selectorType: string;
+  }) => (
+    <div
+      className={`selector ${activeSelector === selectorType ? "active" : ""}`}
+      onClick={() =>
+        setActiveSelector(
+          activeSelector === selectorType ? "all" : selectorType
+        )
+      }
+    >
+      {label}
+      {(selectorType === "favorite" || selectorType === "unfavorite") &&
+        (selectorType === "favorite"
+          ? favoriteDogs.length
+          : unfavoriteDogs.length)}
+    </div>
+  );
+
+  const selectors = [
+    { label: "favorites", selectorType: "favorite" },
+    { label: "unfavorite", selectorType: "unfavorite" },
+    { label: "create dog", selectorType: "create" },
+  ];
+
   return (
     <section id="main-section">
       <div className="container-header">
@@ -11,21 +55,16 @@ export const FunctionalSection = () => {
           Change to Class
         </Link>
         <div className="selectors">
-          {/* This should display the favorited count */}
-          <div className={`selector active`} onClick={() => {}}>
-            favorited ( 12 )
-          </div>
-
-          {/* This should display the unfavorited count */}
-          <div className={`selector`} onClick={() => {}}>
-            unfavorited ( 25 )
-          </div>
-          <div className={`selector`} onClick={() => {}}>
-            create dog
-          </div>
+          {selectors.map(({ label, selectorType }) => (
+            <Selector
+              key={selectorType}
+              label={label}
+              selectorType={selectorType}
+            />
+          ))}
         </div>
       </div>
-      <div className="content-container"></div>
+      <div className="content-container">{children}</div>
     </section>
   );
 };
